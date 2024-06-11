@@ -6,14 +6,16 @@
 //  Copyright © 2020 Tuan Truong. All rights reserved.
 //
 
-protocol Assembler: class,
-    ReposAssembler,
-    ProductDetailAssembler,
-    ProductsAssembler,
-    MainAssembler,
-    LoginAssembler,
-    GatewaysAssembler,
-    AppAssembler {
+protocol Assembler: AnyObject,
+                    ReposAssembler,
+                    ProductDetailAssembler,
+                    ProductsAssembler,
+                    MainAssembler,
+                    LoginAssembler,
+                    GatewaysAssembler,
+                    AppAssembler,
+                    ProfileAssembler
+{
     
 }
 

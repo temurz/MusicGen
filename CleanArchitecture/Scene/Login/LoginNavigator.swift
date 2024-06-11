@@ -8,10 +8,10 @@
 import UIKit
 
 protocol LoginNavigatorType {
-    
+    func showMain(page: MainPage)
 }
 
-struct LoginNavigator: LoginNavigatorType {
+struct LoginNavigator: LoginNavigatorType, ShowingMain {
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
 }

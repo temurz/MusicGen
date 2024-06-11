@@ -21,10 +21,13 @@ extension LoginViewModel: ViewModel {
     final class Input: ObservableObject {
         @Published var username = ""
         @Published var password = ""
+        @Published var change = ""
         let loginTrigger: Driver<Void>
+        let goToMainTrigger: Driver<Void>
         
-        init(loginTrigger: Driver<Void>) {
+        init( loginTrigger: Driver<Void>, goToMainTrigger: Driver<Void>) {
             self.loginTrigger = loginTrigger
+            self.goToMainTrigger = goToMainTrigger
         }
     }
     
@@ -86,6 +89,11 @@ extension LoginViewModel: ViewModel {
                 output.alert = message
             })
             .store(in: cancelBag)
+        
+        input.goToMainTrigger.sink { _ in
+            navigator.showMain(page: .settings)
+        }
+        .store(in: cancelBag)
         
         errorTracker
             .receive(on: RunLoop.main)
