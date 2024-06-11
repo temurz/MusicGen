@@ -34,6 +34,10 @@ extension ProfileViewModel: ViewModel {
                     do {
                         try Auth.auth().signOut()
                         output.change = ""
+                        UserDefaults.standard.setValue(nil, forKey: "name")
+                        UserDefaults.standard.setValue(nil, forKey: "familyName")
+                        UserDefaults.standard.setValue(nil, forKey: "email")
+                        UserDefaults.standard.setValue(nil, forKey: "userID")
                     } catch {
                         print(error.localizedDescription)
                     }

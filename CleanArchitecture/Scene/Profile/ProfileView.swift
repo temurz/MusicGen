@@ -40,7 +40,7 @@ struct ProfileView: View {
                         .frame(width: 48, height: 48)
                         .cornerRadius(24)
                     }else {
-                        Image("person.fill")
+                        Image(systemName: "person.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 48, height: 48)

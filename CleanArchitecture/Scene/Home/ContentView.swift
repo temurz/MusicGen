@@ -40,9 +40,11 @@ enum MusicGen: Predictable {
 
 struct ContentView: View {
     @State private var prompt = ""
+    @State private var duration = ""
     @State private var prediction: MusicGen.Prediction? = nil
     @State private var isTextFieldDisabled = false
     @State private var url: URL?
+    @State private var isPresentedAlert = false
     
     @State private var player: AVPlayer?
     @State private var playerItem: AVPlayerItem?
@@ -51,8 +53,9 @@ struct ContentView: View {
     @State private var currentTime: Double = .zero
     
     func generate() async throws {
+        let input = MusicGen.Input(prompt: prompt, duration: Int(duration) ?? 3)
         prediction = try await MusicGen.predict(with: client,
-                                                 input: .init(prompt: prompt))
+                                                 input: input)
         
         try await prediction?.wait(with: client)
     }
@@ -68,6 +71,9 @@ struct ContentView: View {
                           text:$prompt)
                 .disabled(isTextFieldDisabled)
                 .submitLabel(.go)
+                .padding()
+                .background(.ultraThinMaterial)
+                .cornerRadius(12)
                 .onSubmit {
                     if !prompt.isEmpty {
                         addToLocal(prompt: prompt)
@@ -76,9 +82,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                .padding()
-                .background(.ultraThinMaterial)
-                .cornerRadius(12)
                 if let url {
                     VStack {
                         Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
@@ -136,10 +139,7 @@ struct ContentView: View {
                             VStack {}
                         }
                     }
-    //                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .padding()
-    //                .listRowBackground(Color.clear)
-    //                .listRowInsets(.init())
                 }
                 Spacer()
             }
@@ -147,6 +147,42 @@ struct ContentView: View {
             
         }
         .navigationTitle("Generate music")
+        .navigationBarItems(trailing: Button(action: {
+            isPresentedAlert = true
+        }, label: {
+            Image(systemName: "slider.horizontal.3")
+                .resizable()
+                .foregroundStyle(.blue)
+        }))
+        .sheet(isPresented: $isPresentedAlert) {
+            VStack {
+                HStack {
+                    Text("Duration")
+                    Spacer()
+                    TextField("10", text: $duration)
+                        .keyboardType(.numberPad)
+                        .submitLabel(.done)
+                        .frame(width: 20, height: 16)
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(12)
+                }
+                .padding()
+                Button {
+                    isPresentedAlert = false
+                } label: {
+                    Text("Done")
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(.blue)
+                        .cornerRadius(12)
+                }
+
+                Spacer()
+            }
+            .padding()
+            
+        }
     }
     
     private func setupAudio() {

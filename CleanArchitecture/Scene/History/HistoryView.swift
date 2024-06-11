@@ -12,10 +12,18 @@ struct HistoryView: View {
     @State private var items = [Row]()
     var body: some View {
         VStack {
-            List(items, id: \.id) {row in
-                Text(row.prompt ?? "")
+            if items.isEmpty {
+                Spacer()
+                Text("You did not generate music yet!")
+                    .font(.headline)
+                    .lineLimit(0)
+                    .padding()
+                Spacer()
+            }else {
+                List(items, id: \.id) {row in
+                    Text(row.prompt ?? "")
+                }
             }
-            
         }
         .navigationTitle("History")
         .onAppear {

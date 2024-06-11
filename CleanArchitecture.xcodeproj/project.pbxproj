@@ -674,7 +674,7 @@
 			children = (
 				B88C8B372C183C9E00382B00 /* Profile */,
 				B88C8ADF2C17973F00382B00 /* Home */,
-				B88C8ADC2C17971400382B00 /* Settings */,
+				B88C8ADC2C17971400382B00 /* History */,
 				1765B2CF24C6D5350096D210 /* Navigators */,
 				1742B37924D7E87000C82D15 /* Common */,
 				1770EC2924DAA5B80022FBFE /* RepoCollection */,
@@ -844,12 +844,12 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		B88C8ADC2C17971400382B00 /* Settings */ = {
+		B88C8ADC2C17971400382B00 /* History */ = {
 			isa = PBXGroup;
 			children = (
 				B88C8ADD2C17972200382B00 /* HistoryView.swift */,
 			);
-			path = Settings;
+			path = History;
 			sourceTree = "<group>";
 		};
 		B88C8ADF2C17973F00382B00 /* Home */ = {
