@@ -166,7 +166,6 @@
 		B88C8B412C18447600382B00 /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C8B402C18447600382B00 /* ProfileAssembler.swift */; };
 		B88C8B432C184BE400382B00 /* ShowingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C8B422C184BE400382B00 /* ShowingMain.swift */; };
 		B8D3E95E2C92E72F0099F8FE /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E95D2C92E72F0099F8FE /* SoundManager.swift */; };
-		B8D3E9602C92E7830099F8FE /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E95F2C92E7830099F8FE /* Base.swift */; };
 		B8D3E9622C92E7A40099F8FE /* MusicGenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E9612C92E7A40099F8FE /* MusicGenModel.swift */; };
 		B8D3E9642C92E7C90099F8FE /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E9632C92E7C90099F8FE /* UpdateModel.swift */; };
 /* End PBXBuildFile section */
@@ -328,7 +327,6 @@
 		B88C8B402C18447600382B00 /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
 		B88C8B422C184BE400382B00 /* ShowingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingMain.swift; sourceTree = "<group>"; };
 		B8D3E95D2C92E72F0099F8FE /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
-		B8D3E95F2C92E7830099F8FE /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		B8D3E9612C92E7A40099F8FE /* MusicGenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGenModel.swift; sourceTree = "<group>"; };
 		B8D3E9632C92E7C90099F8FE /* UpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -865,7 +863,6 @@
 			children = (
 				178722FA24BD537D00D90F8E /* ContentView.swift */,
 				B8D3E95D2C92E72F0099F8FE /* SoundManager.swift */,
-				B8D3E95F2C92E7830099F8FE /* Base.swift */,
 				B8D3E9612C92E7A40099F8FE /* MusicGenModel.swift */,
 				B8D3E9632C92E7C90099F8FE /* UpdateModel.swift */,
 			);
@@ -1131,7 +1128,6 @@
 				1781CF4024BD8FB8004ED1C6 /* ProductDetailAssembler.swift in Sources */,
 				B88C8B3F2C18446D00382B00 /* ProfileViewUseCase.swift in Sources */,
 				B88C8B392C183CB000382B00 /* ProfileView.swift in Sources */,
-				B8D3E9602C92E7830099F8FE /* Base.swift in Sources */,
 				B88C8ACE2C1793AF00382B00 /* MainNavigator.swift in Sources */,
 				1787233F24BD556E00D90F8E /* LoginNavigator.swift in Sources */,
 				1787232F24BD547600D90F8E /* AppUseCase.swift in Sources */,
