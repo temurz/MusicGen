@@ -8,8 +8,4 @@
 
 import Foundation
 import Replicate
-struct Base {
-    static let token = "r8_fMQ8Yl8560PzcKbjaqfwP2S2wN1TLxC38zmHT"
-    
-    public static let client = Replicate.Client(token: "r8_fMQ8Yl8560PzcKbjaqfwP2S2wN1TLxC38zmHT")
-}
+
