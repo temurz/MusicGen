@@ -10,34 +10,6 @@ import SwiftUI
 import Replicate
 import AVFoundation
 import CoreData
-struct Base {
-    static let token = "r8_fMQ8Yl8560PzcKbjaqfwP2S2wN1TLxC38zmHT"
-}
-private let client = Replicate.Client(token: "r8_fMQ8Yl8560PzcKbjaqfwP2S2wN1TLxC38zmHT")
-
-class SoundManager : ObservableObject {
-    var audioPlayer: AVPlayer?
-
-    func playSound(url: URL){
-        
-        self.audioPlayer = AVPlayer(url: url)
-        
-    }
-}
-
-enum MusicGen: Predictable {
-    struct Input: Codable {
-        let prompt: String
-        var duration: Int = 3
-    }
-    
-    typealias Output = [URL]
-    
-    static var versionID: Model.Version.ID = "671ac645ce5e552cc63a54a2bbff63fcf798043055d2dac5fc9e36a837eedcfb"
-    
-    static var modelID: Model.ID = "meta/musicgen/stereo-large"
-}
-
 struct ContentView: View {
     @State private var prompt = ""
     @State private var duration = ""
@@ -54,14 +26,13 @@ struct ContentView: View {
     
     func generate() async throws {
         let input = MusicGen.Input(prompt: prompt, duration: Int(duration) ?? 3)
-        prediction = try await MusicGen.predict(with: client,
+        prediction = try await MusicGen.predict(with: Base.client,
                                                  input: input)
-        
-        try await prediction?.wait(with: client)
+        try await prediction?.wait(with: Base.client)
     }
     
     func cancel() async throws {
-        try await prediction?.cancel(with: client)
+        try await prediction?.cancel(with: Base.client)
     }
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -77,6 +48,7 @@ struct ContentView: View {
                 .onSubmit {
                     if !prompt.isEmpty {
                         addToLocal(prompt: prompt)
+                        url = nil
                         Task {
                             try await generate()
                         }
@@ -115,7 +87,6 @@ struct ContentView: View {
                     }
                 }
                 if let prediction, url == nil {
-                    
                     ZStack {
                         Color.clear
                             .aspectRatio(1.0, contentMode: .fit)
@@ -274,9 +245,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-struct UpdateOutput: Decodable {
-    let status: String?
-    let output: URL?
 }
