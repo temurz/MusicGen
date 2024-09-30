@@ -11,6 +11,7 @@ import Combine
 import SwiftUI
 enum MainPage: String{
     case home
+    case images
     case catalog
     case settings
 }
@@ -20,7 +21,8 @@ class MainViewRouter: ViewRouter {
     let assembler: Assembler
     
     
-    var pages: [TabBarItem] = [TabBarItem(imageName: "music.quarternote.3", title: "Generate", id: MainPage.home.rawValue),
+    var pages: [TabBarItem] = [TabBarItem(imageName: "music.quarternote.3", title:                                  "Generate", id: MainPage.home.rawValue),
+                               TabBarItem(imageName: "photo.on.rectangle.angled", title: "Images", id: MainPage.images.rawValue),
                                TabBarItem(imageName: "square.stack.3d.up", title: "History", id: MainPage.catalog.rawValue),
                                TabBarItem(imageName: "person.crop.circle.fill", title: "Profile", id: MainPage.settings.rawValue)]
     
@@ -35,6 +37,10 @@ class MainViewRouter: ViewRouter {
         switch selectedPageId {
         case MainPage.home.rawValue:
             let view: ContentView = ContentView()
+            body = AnyView(view)
+            break
+        case MainPage.images.rawValue:
+            let view: ImageRecognitionView = ImageRecognitionView()
             body = AnyView(view)
             break
         case MainPage.catalog.rawValue:

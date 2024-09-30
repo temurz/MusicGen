@@ -135,6 +135,12 @@
 		1B425EAC24FF8D1A000F7F6B /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B425EAB24FF8D1A000F7F6B /* SDWebImageMapKit */; };
 		1B425EAF24FF9058000F7F6B /* ESPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 1B425EAE24FF9058000F7F6B /* ESPullToRefresh */; };
 		1BD163F124FF8CA700EBC063 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD163F024FF8CA700EBC063 /* MBProgressHUD */; };
+		B847D54A2CAAF55100866471 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D5492CAAF55100866471 /* Classifier.swift */; };
+		B847D54C2CAAF74700866471 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B847D54B2CAAF74700866471 /* Resnet50.mlmodel */; };
+		B847D54F2CAAFC4800866471 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D54E2CAAFC4800866471 /* Image+Extension.swift */; };
+		B847D5512CAAFC5800866471 /* VNClassification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D5502CAAFC5800866471 /* VNClassification+Extension.swift */; };
+		B847D5532CAAFE0700866471 /* AccessCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D5522CAAFE0700866471 /* AccessCameraView.swift */; };
+		B847D5562CAB080C00866471 /* ImageRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D5552CAB080C00866471 /* ImageRecognitionView.swift */; };
 		B88C8AC32C11ECEF00382B00 /* Replicate in Frameworks */ = {isa = PBXBuildFile; productRef = B88C8AC22C11ECEF00382B00 /* Replicate */; };
 		B88C8ACA2C1793AF00382B00 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C8AC42C1793AF00382B00 /* MainView.swift */; };
 		B88C8ACB2C1793AF00382B00 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C8AC52C1793AF00382B00 /* MainViewModel.swift */; };
@@ -302,6 +308,12 @@
 		17DCF1B524BEE76800D970B4 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		17DCF1B824BF01ED00D970B4 /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		17DCF1BA24BF028200D970B4 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		B847D5492CAAF55100866471 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		B847D54B2CAAF74700866471 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../Downloads/Resnet50.mlmodel; sourceTree = "<group>"; };
+		B847D54E2CAAFC4800866471 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		B847D5502CAAFC5800866471 /* VNClassification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VNClassification+Extension.swift"; sourceTree = "<group>"; };
+		B847D5522CAAFE0700866471 /* AccessCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCameraView.swift; sourceTree = "<group>"; };
+		B847D5552CAB080C00866471 /* ImageRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionView.swift; sourceTree = "<group>"; };
 		B88C8AC42C1793AF00382B00 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B88C8AC52C1793AF00382B00 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B88C8AC62C1793AF00382B00 /* MainViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
@@ -615,6 +627,7 @@
 		178722F524BD537D00D90F8E /* CleanArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				B847D54B2CAAF74700866471 /* Resnet50.mlmodel */,
 				B88C8AF42C182A7C00382B00 /* Database */,
 				B88C8AEE2C17A0B800382B00 /* GoogleService-Info.plist */,
 				B88C8AD02C1793EA00382B00 /* Views */,
@@ -678,6 +691,7 @@
 		1787231A24BD53B200D90F8E /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				B847D5542CAB080000866471 /* ImageRecognition */,
 				B88C8B372C183C9E00382B00 /* Profile */,
 				B88C8ADF2C17973F00382B00 /* Home */,
 				B88C8ADC2C17971400382B00 /* History */,
@@ -830,6 +844,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B847D54D2CAAFC3700866471 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B847D54E2CAAFC4800866471 /* Image+Extension.swift */,
+				B847D5502CAAFC5800866471 /* VNClassification+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B847D5542CAB080000866471 /* ImageRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				B847D5552CAB080C00866471 /* ImageRecognitionView.swift */,
+				B847D5522CAAFE0700866471 /* AccessCameraView.swift */,
+				B847D5492CAAF55100866471 /* Classifier.swift */,
+			);
+			path = ImageRecognition;
+			sourceTree = "<group>";
+		};
 		B88C8AD02C1793EA00382B00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -861,6 +894,7 @@
 		B88C8ADF2C17973F00382B00 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B847D54D2CAAFC3700866471 /* Extensions */,
 				178722FA24BD537D00D90F8E /* ContentView.swift */,
 				B8D3E95D2C92E72F0099F8FE /* SoundManager.swift */,
 				B8D3E9612C92E7A40099F8FE /* MusicGenModel.swift */,
@@ -1076,12 +1110,14 @@
 				B88C8B352C18336A00382B00 /* Row+CoreDataClass.swift in Sources */,
 				176BAA6F24D26CF800324D3C /* APIErrorBase.swift in Sources */,
 				173865AE24D3BCBC0059E3AD /* APIUrls.swift in Sources */,
+				B847D5532CAAFE0700866471 /* AccessCameraView.swift in Sources */,
 				17A5B1F624D81561004BD209 /* GenericSubscriber.swift in Sources */,
 				1787235824BD575E00D90F8E /* PagingInfo.swift in Sources */,
 				1770EC3124DAA7940022FBFE /* ColorCompatibility.swift in Sources */,
 				1742B36524D7B01600C82D15 /* RepoGateway.swift in Sources */,
 				176BAA5524D158BC00324D3C /* LoginView.swift in Sources */,
 				176BAA7124D26D6000324D3C /* Combine+Multipart.swift in Sources */,
+				B847D54F2CAAFC4800866471 /* Image+Extension.swift in Sources */,
 				1781CF4424BD8FB8004ED1C6 /* ProductDetailViewModel.swift in Sources */,
 				17A5B1FC24D948BC004BD209 /* PagingTableView.swift in Sources */,
 				1742B37824D7C48400C82D15 /* RepoItemViewModel.swift in Sources */,
@@ -1136,6 +1172,7 @@
 				B88C8B432C184BE400382B00 /* ShowingMain.swift in Sources */,
 				B88C8B322C18332600382B00 /* History.xcdatamodeld in Sources */,
 				176BAA6224D2698500324D3C /* APIServiceBase.swift in Sources */,
+				B847D5562CAB080C00866471 /* ImageRecognitionView.swift in Sources */,
 				1787235324BD56E400D90F8E /* Product.swift in Sources */,
 				1765B2CE24C6A79F0096D210 /* ProductDetailView.swift in Sources */,
 				B88C8ACC2C1793AF00382B00 /* MainViewRouter.swift in Sources */,
@@ -1164,15 +1201,18 @@
 				1765B2D324C6D6D40096D210 /* ProductRow.swift in Sources */,
 				17A5B20124D95168004BD209 /* RefreshHeaderAnimator.swift in Sources */,
 				1770EC3324DAA9AC0022FBFE /* ShowingRepoCollection.swift in Sources */,
+				B847D54C2CAAF74700866471 /* Resnet50.mlmodel in Sources */,
 				17A5B1FF24D9514B004BD209 /* RefreshFooterAnimator.swift in Sources */,
 				1770EC2E24DAA6570022FBFE /* RepoCollectionCell.swift in Sources */,
 				1742B37E24D7F52D00C82D15 /* RepoCell.swift in Sources */,
+				B847D5512CAAFC5800866471 /* VNClassification+Extension.swift in Sources */,
 				176BAA7524D26E4C00324D3C /* LogOptions.swift in Sources */,
 				176BAA4824D130B800324D3C /* Bindable.swift in Sources */,
 				B88C8ADB2C17940200382B00 /* ViewRouter.swift in Sources */,
 				176BAA5824D167A400324D3C /* LoggingIn.swift in Sources */,
 				178809B024C0520000002215 /* ViewModel+GetList.swift in Sources */,
 				173865B024D40FBE0059E3AD /* ViewModel+GetItem.swift in Sources */,
+				B847D54A2CAAF55100866471 /* Classifier.swift in Sources */,
 				B88C8ADA2C17940200382B00 /* TabBarItem.swift in Sources */,
 				1742B36B24D7B22B00C82D15 /* ReposAssembler.swift in Sources */,
 				1765B2CC24C68D940096D210 /* CancelBag.swift in Sources */,

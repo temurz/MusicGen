@@ -248,7 +248,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct Base {
-    static let token = ""
+    static let token = "r8_0WlZI2OqRaoXKyRMPw3vNzDJxRf0n8v17ub6E"
     
     public static let client = Replicate.Client(token: token)
 }

@@ -44,7 +44,7 @@ struct TabBarView<Router>: View where Router: ViewRouter {
     var body: some View {
         GeometryReader { geo in
             HStack(spacing: 8) {
-                ForEach(0..<3) { idx in
+                ForEach(0..<4) { idx in
                     TabBarItemView(viewRouter: viewRouter,
                                    tabBarItem: self.viewRouter.pages[idx],
                                    defaultColor: .tabBarItemDefaultTintColor,
@@ -52,7 +52,7 @@ struct TabBarView<Router>: View where Router: ViewRouter {
                                    width: 24,
                                    height: 24,
                                    font: .caption2)
-                    .frame(width: geo.size.width/3)
+                    .frame(width: geo.size.width/4.2)
                 }
             }
         }
